@@ -2,5 +2,15 @@
     "name": "queixinhas-api",
     "version": "0.0.1",
     "author": "João Duarte <jdduarte@gmail.com>, TT* <ttasterisco@gmail.com>",
-    "description": "Civic report tool. Power to the people!"
+    "description": "Civic report tool. Power to the people!",
+    "dependencies": {
+    	"restify": ">=1.4.4",
+    	"formidable": ">=1.0.11",
+    	"object.extend": ">=0.0.2",
+    	"mongodb": ">=1.1.11"
+    },
+    "devDependencies": {
+    	"mocha": "1.7.0",
+    	"should": ">=1.2.1"
+    }
 }
