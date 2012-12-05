@@ -5,7 +5,7 @@ var should = require('should'),
 queixinhas_db.db_name = 'queixinhas_tests';
 
 describe('MongoDB accesser', function(){
-  it('should save, load and remove a document in the database', function(done){
+  it('should save, load, modify and remove a document in the database', function(done){
     var value = Date.now();
 
     queixinhas_db.save('test', {value: value}, function(error, id){
@@ -13,13 +13,19 @@ describe('MongoDB accesser', function(){
       queixinhas_db.load('test', id, function(error, docs){
         docs[0].value.should.equal(value);
 
-        queixinhas_db.remove('test', id, function(error, docs){
+        var new_value = Date.now();
 
-          queixinhas_db.load('test', id, function(error, docs){
-            docs.length.should.equal(0);
+        queixinhas_db.update('test', id, {value: new_value}, function(error, doc){
+          doc.value.should.equal(new_value);
+        
+          queixinhas_db.remove('test', id, function(error, docs){
 
-            done();
-          })
+            queixinhas_db.load('test', id, function(error, docs){
+              docs.length.should.equal(0);
+
+              done();
+            });
+          });
         });
       });
     });
