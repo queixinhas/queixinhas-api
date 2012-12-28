@@ -1,0 +1,10 @@
+var Config = {
+	// This is the address for a web server which serves
+	// static content from the mediaDirectory
+	'mediaHost': 'http://the-url-of-the-media-server',
+	
+	// The folder where the media items are saved
+	'mediaDirectory': 'uploads/'
+};
+
+module.exports = Config;
