@@ -12,7 +12,8 @@ describe('Models', function(){
         description: 'a report',
         tags: ['tag#1', 'tag#2'],
         location: {lon: -9, lat: 39},
-        address: 'in the sea'
+        address: 'in the sea',
+        mediaItems: ['http://image.com']
       });
 
       // Change the default BD configs
@@ -29,6 +30,7 @@ describe('Models', function(){
           report.tags.should.eql(['tag#1', 'tag#2']);
           report.location.should.eql({lon: -9, lat: 39});
           report.address.should.equal('in the sea');
+          report.mediaItems.should.eql(['http://image.com']);
 
           report.on('delete', function(){
             done();
