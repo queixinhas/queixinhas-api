@@ -4,9 +4,11 @@
     "author": "João Duarte <jdduarte@gmail.com>, TT* <ttasterisco@gmail.com>",
     "description": "Civic report tool. Power to the people!",
     "dependencies": {
+        "util": ">=0.4.9",
     	"restify": ">=1.4.4",
     	"formidable": ">=1.0.11",
     	"object.extend": ">=0.0.2",
+        "node-uuid": ">=1.4.0",
     	"mongodb": ">=1.1.11"
     },
     "devDependencies": {
