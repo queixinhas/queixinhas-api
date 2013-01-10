@@ -24,7 +24,7 @@ The return type is a JSON object which represents the report with the given ID
     	"name"        : "A name",
     	"description" : "A description",
     	"tags"        : ["tag1", "tag2"],
-    	"location"    : {lon: -9.3567, lat: 39.8365},
+    	"location"    : {"lon": -9.3567, "lat": 39.8365},
     	"address"     : "An address",
     	"mediaItems"  : ["http://a-media-item-url"]
     }
@@ -33,19 +33,21 @@ The return type is a JSON object which represents the report with the given ID
 The content type should be `application/json`. The body should be a JSON object representing the report
 
     {
-    	"id"          : "1",
     	"name"        : "A name",
     	"description" : "A description",
     	"tags"        : ["tag1", "tag2"],
-    	"location"    : {lon: -9.3567, lat: 39.8365},
+    	"location"    : {"lon": -9.3567, "lat": 39.8365},
     	"address"     : "An address",
     	"mediaItems"  : ["http://a-media-item-url"]
     }
+
+If you put this JSON object in a file called report.json you could create a new report like this:
+`curl -H "Content-Type: application/json" -d @report.json http://queixinhas-api.com/reports`
     
 #### POST /images
 The content type should be `multi-part/form-data` and the body should only contain the image to be uploaded.
 
-A sample request using curl: `curl -F file=@/home/user/image.jpg http://queixinhas-api.com/images`.
+A sample request using curl: `curl -F file=@/home/user/image.jpg http://queixinhas-api.com/images`
 
 A successful request should get the following response:
 
