@@ -10,8 +10,8 @@ describe('MongoDB accesser', function(){
 
     queixinhas_db.save('test', {value: value}, function(error, id){
 
-      queixinhas_db.load('test', id, function(error, docs){
-        docs[0].value.should.equal(value);
+      queixinhas_db.load('test', id, function(error, doc){
+        doc.value.should.equal(value);
 
         queixinhas_db.find('test', {value: value}, function(error, docs) {
           docs[0].value.should.equal(value);
@@ -23,8 +23,8 @@ describe('MongoDB accesser', function(){
           
             queixinhas_db.remove('test', id, function(error, docs){
 
-              queixinhas_db.load('test', id, function(error, docs){
-                docs.length.should.equal(0);
+              queixinhas_db.load('test', id, function(error, doc){
+                should.not.exist(doc);
 
                 done();
               });
