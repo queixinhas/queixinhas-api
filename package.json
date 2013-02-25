@@ -1,7 +1,7 @@
 {
     "name": "queixinhas-api",
     "version": "0.0.1",
-    "author": "João Duarte <jdduarte@gmail.com>, TT* <ttasterisco@gmail.com>",
+    "author": "João Duarte <jdduarte@gmail.com>, Tony Tam <ttasterisco@queixinhas.com>",
     "description": "Civic report tool. Power to the people!",
     "dependencies": {
         "util": ">=0.4.9",
